@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #060606;
+  --surface: #0e0e0e;
+  --border: rgba(255, 255, 255, 0.06);
+  --text: #f0f0f0;
+  --muted: rgba(255, 255, 255, 0.3);
+  --faint: rgba(255, 255, 255, 0.1);
+  --accent: #e85d30;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}

@@ -1,0 +1,42 @@
+﻿.dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease, height 0.25s ease, background 0.25s ease;
+  will-change: transform;
+}
+
+.ringHover {
+  width: 56px;
+  height: 56px;
+  background: #ffffff;
+  border-color: transparent;
+  mix-blend-mode: difference;
+}
+
+@media (min-width: 1025px) {
+  :global(body) {
+    cursor: none;
+  }
+}

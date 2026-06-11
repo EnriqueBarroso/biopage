@@ -1,0 +1,9 @@
+﻿.word {
+  display: inline-block;
+  opacity: 0.15;
+  transition: opacity 0.6s ease;
+}
+
+.visible {
+  opacity: 1;
+}

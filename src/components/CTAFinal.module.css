@@ -1,0 +1,63 @@
+﻿.cta {
+  padding: 6rem 0;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.label {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 1rem;
+  max-width: 46ch;
+  margin: 0 auto 2.5rem;
+}
+
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 1rem 2.2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  animation: pulseShadow 2s ease infinite;
+}
+
+.button:hover {
+  opacity: 0.85;
+}
+
+@keyframes pulseShadow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(232, 93, 48, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(232, 93, 48, 0);
+  }
+}
+
+@media (max-width: 900px) {
+  .cta {
+    padding: 4rem 0;
+  }
+}
