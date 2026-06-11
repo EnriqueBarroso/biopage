@@ -16,6 +16,13 @@ const projects = [
       'Hub de contenido potenciado con IA para curar, organizar y publicar artículos de forma automática.',
     url: 'https://holacamarada.com',
   },
+  {
+    name: 'CineCuba',
+    tag: 'Plataforma de cine · Catálogo',
+    description:
+      'Plataforma de cine cubano con catálogo de películas, fichas técnicas y sistema de búsqueda avanzada.',
+    url: 'https://cine-cubano.com',
+  },
 ]
 
 function Portfolio() {
