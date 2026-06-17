@@ -10,23 +10,26 @@ import Portfolio from './components/Portfolio'
 import FAQ from './components/FAQ'
 import CTAFinal from './components/CTAFinal'
 import Footer from './components/Footer'
+import { RegionProvider } from './context/RegionContext'
 
 function App() {
   return (
-    <div>
-      <CustomCursor />
-      <Particles />
-      <Navbar />
-      <Hero />
-      <Ticker />
-      <StatsBar />
-      <Problema />
-      <Planes />
-      <Portfolio />
-      <FAQ />
-      <CTAFinal />
-      <Footer />
-    </div>
+    <RegionProvider>
+      <div>
+        <CustomCursor />
+        <Particles />
+        <Navbar />
+        <Hero />
+        <Ticker />
+        <StatsBar />
+        <Problema />
+        <Planes />
+        <Portfolio />
+        <FAQ />
+        <CTAFinal />
+        <Footer />
+      </div>
+    </RegionProvider>
   )
 }
 
