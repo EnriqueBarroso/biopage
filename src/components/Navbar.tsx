@@ -1,15 +1,12 @@
 import { useEffect, useState } from 'react'
-import { WA_BASE } from '../config'
+import { TELEGRAM_LINK } from '../config'
 import styles from './Navbar.module.css'
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
 
   const handleEmpezarClick = () => {
-    const url = `${WA_BASE}?text=${encodeURIComponent(
-      'Hola, me interesa crear mi página de enlaces con Biopage.'
-    )}`
-    window.open(url, '_blank')
+    window.open(TELEGRAM_LINK, '_blank')
   }
 
   useEffect(() => {

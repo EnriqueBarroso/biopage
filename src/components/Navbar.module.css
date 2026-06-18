@@ -67,3 +67,15 @@
     gap: 1.25rem;
   }
 }
+
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+
+  .cta {
+    padding: 0.55rem 1.1rem;
+    font-size: 0.85rem;
+    margin-left: 1rem;
+  }
+}

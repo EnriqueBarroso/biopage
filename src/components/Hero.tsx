@@ -1,12 +1,9 @@
-import { WA_BASE } from '../config'
+import { TELEGRAM_LINK } from '../config'
 import styles from './Hero.module.css'
 
 function Hero() {
   const handleQuieroClick = () => {
-    const url = `${WA_BASE}?text=${encodeURIComponent(
-      'Hola, quiero crear mi página de enlaces premium.'
-    )}`
-    window.open(url, '_blank')
+    window.open(TELEGRAM_LINK, '_blank')
   }
 
   const handleVerPlanesClick = () => {

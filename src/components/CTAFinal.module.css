@@ -61,3 +61,9 @@
     padding: 4rem 0;
   }
 }
+
+@media (max-width: 768px) {
+  .title {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+}
