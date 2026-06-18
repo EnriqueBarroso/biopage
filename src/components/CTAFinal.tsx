@@ -1,17 +1,9 @@
 import FadeIn from './FadeIn'
-import { WA_BASE } from '../config'
 import { useRegion } from '../context/RegionContext'
 import styles from './CTAFinal.module.css'
 
-const TELEGRAM_LINK = 'https://t.me/biopagecuba_bot'
-
-const whatsappLink = `${WA_BASE}?text=${encodeURIComponent(
-  'Hola, quiero información sobre mi página de enlaces Biopage.'
-)}`
-
 function CTAFinal() {
-  const { region } = useRegion()
-  const isCuba = region === 'CU'
+  const { config } = useRegion()
 
   return (
     <section className={styles.cta}>
@@ -28,11 +20,11 @@ function CTAFinal() {
         </FadeIn>
         <a
           className={styles.button}
-          href={isCuba ? TELEGRAM_LINK : whatsappLink}
+          href={config.contactUrl}
           target="_blank"
           rel="noopener noreferrer"
         >
-          {isCuba ? 'Escríbeme por Telegram' : 'Hablar por WhatsApp →'}
+          {config.ctaFinalLabel}
         </a>
       </div>
     </section>

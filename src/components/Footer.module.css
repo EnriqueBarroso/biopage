@@ -19,3 +19,16 @@
     padding: 2rem 0;
   }
 }
+
+.crossLink {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-decoration: none;
+  padding-bottom: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.crossLink:hover {
+  color: var(--accent);
+}

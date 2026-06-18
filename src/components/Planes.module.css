@@ -25,41 +25,6 @@
   text-align: right;
 }
 
-.regionToggle {
-  display: inline-flex;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 0.3rem;
-  gap: 0.3rem;
-  margin-bottom: 0.75rem;
-}
-
-.regionButton {
-  border: none;
-  background: transparent;
-  color: var(--muted);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 500;
-  padding: 0.5rem 1.2rem;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.regionButton:hover {
-  color: var(--text);
-}
-
-.regionButtonActive {
-  background: var(--accent);
-  color: #ffffff;
-}
-
-.regionButtonActive:hover {
-  color: #ffffff;
-}
-
 .regionNote {
   color: var(--muted);
   font-size: 0.8rem;

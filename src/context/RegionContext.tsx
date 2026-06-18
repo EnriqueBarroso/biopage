@@ -1,18 +1,24 @@
-import { createContext, useContext, useState, type ReactNode } from 'react'
-
-export type Region = 'ES' | 'CU'
+import { createContext, useContext, type ReactNode } from 'react'
+import { regionConfigs, type Region, type RegionConfig } from '../config/regions'
 
 type RegionContextValue = {
   region: Region
-  setRegion: (region: Region) => void
+  config: RegionConfig
 }
 
 const RegionContext = createContext<RegionContextValue | null>(null)
 
-export function RegionProvider({ children }: { children: ReactNode }) {
-  const [region, setRegion] = useState<Region>('ES')
+export function RegionProvider({
+  region,
+  children,
+}: {
+  region: Region
+  children: ReactNode
+}) {
   return (
-    <RegionContext.Provider value={{ region, setRegion }}>{children}</RegionContext.Provider>
+    <RegionContext.Provider value={{ region, config: regionConfigs[region] }}>
+      {children}
+    </RegionContext.Provider>
   )
 }
 

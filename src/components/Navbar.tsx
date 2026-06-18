@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
-import { TELEGRAM_LINK } from '../config'
+import { useRegion } from '../context/RegionContext'
 import styles from './Navbar.module.css'
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const { config } = useRegion()
 
   const handleEmpezarClick = () => {
-    window.open(TELEGRAM_LINK, '_blank')
+    window.open(config.contactUrl, '_blank')
   }
 
   useEffect(() => {
@@ -40,7 +41,7 @@ function Navbar() {
           </li>
         </ul>
         <button className={styles.cta} type="button" onClick={handleEmpezarClick}>
-          Empezar →
+          {config.navCtaLabel}
         </button>
       </div>
     </nav>

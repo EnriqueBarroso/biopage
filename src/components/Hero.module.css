@@ -38,7 +38,13 @@
   font-size: clamp(3rem, 6vw, 6rem);
   line-height: 1.0;
   letter-spacing: -0.02em;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.heroNote {
+  color: var(--accent);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
 }
 
 .title span {

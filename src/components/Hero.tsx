@@ -1,9 +1,11 @@
-import { TELEGRAM_LINK } from '../config'
+import { useRegion } from '../context/RegionContext'
 import styles from './Hero.module.css'
 
 function Hero() {
+  const { config } = useRegion()
+
   const handleQuieroClick = () => {
-    window.open(TELEGRAM_LINK, '_blank')
+    window.open(config.contactUrl, '_blank')
   }
 
   const handleVerPlanesClick = () => {
@@ -22,6 +24,7 @@ function Hero() {
           <span className={styles.line2}>en bio,</span>
           <span className={styles.line3}>convertido.</span>
         </h1>
+        {config.heroNote && <p className={styles.heroNote}>{config.heroNote}</p>}
         <div className={styles.bottom}>
           <p className={styles.subtitle}>
             Páginas de enlaces a medida, rápidas y sin plantillas genéricas. Diseñadas
