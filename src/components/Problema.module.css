@@ -76,3 +76,19 @@
     gap: 2.5rem;
   }
 }
+
+@media (max-width: 768px) {
+  .label {
+    font-size: 0.8125rem;
+  }
+
+  .text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .pointTitle {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}

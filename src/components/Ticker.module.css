@@ -33,3 +33,9 @@
     padding: 1rem 1.25rem;
   }
 }
+
+@media (max-width: 768px) {
+  .item {
+    font-size: 0.8125rem;
+  }
+}

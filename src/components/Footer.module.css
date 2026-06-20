@@ -32,3 +32,14 @@
 .crossLink:hover {
   color: var(--accent);
 }
+
+@media (max-width: 768px) {
+  .inner {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .crossLink {
+    font-size: 0.8125rem;
+  }
+}

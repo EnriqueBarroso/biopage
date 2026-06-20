@@ -43,3 +43,10 @@
     border-bottom: none;
   }
 }
+
+@media (max-width: 768px) {
+  .label {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+  }
+}

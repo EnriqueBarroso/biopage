@@ -96,3 +96,27 @@
     padding: 2rem 1.5rem;
   }
 }
+
+@media (max-width: 768px) {
+  .label {
+    font-size: 0.8125rem;
+  }
+
+  .tag {
+    font-size: 0.8125rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .link {
+    font-size: 0.9375rem;
+  }
+}

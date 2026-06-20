@@ -347,4 +347,58 @@
     align-items: center;
     gap: 1rem;
   }
+
+  .note {
+    font-size: 0.875rem;
+  }
+
+  .regionNote {
+    font-size: 0.8125rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .features li {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .priceNote {
+    font-size: 0.8125rem;
+  }
+
+  .number {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .comboNote {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .comboBadge {
+    font-size: 0.8125rem;
+  }
+
+  .cta {
+    font-size: 0.9375rem;
+    align-self: stretch;
+    text-align: center;
+  }
+
+  .comboCta {
+    font-size: 0.9375rem;
+  }
+
+  .paymentTitle {
+    font-size: 1rem;
+  }
+
+  .paymentDescription {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
 }

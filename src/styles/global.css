@@ -33,3 +33,9 @@ body {
     padding: 0 1.5rem;
   }
 }
+
+@media (max-width: 768px) {
+  :root {
+    --muted: rgba(255, 255, 255, 0.6);
+  }
+}
