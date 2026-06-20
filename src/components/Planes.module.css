@@ -46,6 +46,11 @@
   gap: 4px;
 }
 
+/* Cuba cards carry an extra "example" line, so they need more room */
+.accordionWithExamples {
+  height: 700px;
+}
+
 /* ── Plan card ── */
 .plan {
   position: relative;
@@ -269,6 +274,13 @@
   flex-shrink: 0;
 }
 
+.example {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
 .cta {
   align-self: flex-start;
   text-align: center;
@@ -487,6 +499,12 @@
     transform: none;
   }
 
+  /* Cuba cards carry an extra "example" line — let content drive the card
+     height instead of being clipped by inset:0 */
+  .accordionWithExamples .planActive .expandedContent {
+    position: static;
+  }
+
   .description {
     font-size: 1rem;
     line-height: 1.7;
@@ -499,6 +517,11 @@
 
   .priceNote {
     font-size: 0.8125rem;
+  }
+
+  .example {
+    font-size: 0.875rem;
+    line-height: 1.6;
   }
 
   .number {

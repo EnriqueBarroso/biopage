@@ -10,6 +10,7 @@ export interface PlanInfo {
   priceNote: string
   featured: boolean
   features: string[]
+  example?: string
 }
 
 export interface ComboInfo {
@@ -156,6 +157,8 @@ export const cubaConfig: RegionConfig = {
       priceNote: `~${formatCup(convertUsdToCup(240))}`,
       featured: false,
       features: features.Creator,
+      example:
+        'Ejemplo: tu peluquería con fotos, servicios, precios y WhatsApp en un solo lugar.',
     },
     {
       number: '02',
@@ -165,6 +168,8 @@ export const cubaConfig: RegionConfig = {
       priceNote: `~${formatCup(convertUsdToCup(480))}`,
       featured: true,
       features: features.Business,
+      example:
+        'Ejemplo: tu tienda con catálogo de productos y pedidos por mensaje directo.',
     },
     {
       number: '03',
@@ -174,6 +179,8 @@ export const cubaConfig: RegionConfig = {
       priceNote: `~${formatCup(convertUsdToCup(720))}`,
       featured: false,
       features: features.Portfolio,
+      example:
+        'Ejemplo: tu negocio con historia, proyectos anteriores y formulario de contacto.',
     },
     {
       number: '04',

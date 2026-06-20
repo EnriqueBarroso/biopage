@@ -6,6 +6,7 @@ function Planes() {
   const [activeIndex, setActiveIndex] = useState(1)
   const { config } = useRegion()
   const { contactUrl, plans, combo, paymentMethods, priceEquivalenceNote, exchangeRateNote } = config
+  const hasExamples = plans.some((plan) => plan.example)
 
   return (
     <section id="planes" className={styles.planes}>
@@ -18,7 +19,9 @@ function Planes() {
         {priceEquivalenceNote && <p className={styles.regionNote}>{priceEquivalenceNote}</p>}
         {exchangeRateNote && <p className={styles.exchangeRateNote}>{exchangeRateNote}</p>}
 
-        <div className={styles.accordion}>
+        <div
+          className={`${styles.accordion} ${hasExamples ? styles.accordionWithExamples : ''}`}
+        >
           {plans.map((plan, index) => {
             const isActive = index === activeIndex
 
@@ -69,6 +72,7 @@ function Planes() {
                       </li>
                     ))}
                   </ul>
+                  {plan.example && <p className={styles.example}>{plan.example}</p>}
                   <a
                     className={styles.cta}
                     href={contactUrl}
