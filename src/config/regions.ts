@@ -22,10 +22,19 @@ export interface PaymentMethod {
   description: string
 }
 
+export interface HeroContent {
+  eyebrow: string
+  line1: string
+  line2: string
+  line3: string
+  subtitle: string
+}
+
 export interface RegionConfig {
   contactUrl: string
   navCtaLabel: string
   ctaFinalLabel: string
+  hero: HeroContent
   heroNote?: string
   plans: PlanInfo[]
   combo: ComboInfo
@@ -68,6 +77,14 @@ export const esConfig: RegionConfig = {
   contactUrl: 'https://enrique-barroso-dev.vercel.app',
   navCtaLabel: 'Empezar →',
   ctaFinalLabel: 'Hablar con nosotros →',
+  hero: {
+    eyebrow: 'La alternativa premium a Linktree',
+    line1: 'Tu enlace',
+    line2: 'en bio,',
+    line3: 'convertido.',
+    subtitle:
+      'Páginas de enlaces a medida, rápidas y sin plantillas genéricas. Diseñadas para convertir seguidores en clientes.',
+  },
   plans: [
     {
       number: '01',
@@ -118,6 +135,14 @@ export const cubaConfig: RegionConfig = {
   contactUrl: 'https://t.me/biopagecuba_bot',
   navCtaLabel: 'Empezar →',
   ctaFinalLabel: 'Escríbeme por Telegram',
+  hero: {
+    eyebrow: 'Tu negocio, visible y serio desde el primer clic',
+    line1: 'Una página propia.',
+    line2: 'Para que te tomen',
+    line3: 'en serio.',
+    subtitle:
+      'Todo lo que ofreces, en un solo lugar — sin depender de tu perfil de Facebook. Lista en días, no en semanas, y pensada para que la gente confíe en ti desde que la abre.',
+  },
   heroNote: 'Precios adaptados para Cuba. Pago en USD, CUP o efectivo.',
   plans: [
     {

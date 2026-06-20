@@ -17,19 +17,16 @@ function Hero() {
       <div className="container">
         <div className={styles.eyebrow}>
           <span className={styles.dot} />
-          <span>La alternativa premium a Linktree</span>
+          <span>{config.hero.eyebrow}</span>
         </div>
         <h1 className={styles.title}>
-          <span className={styles.line1}>Tu enlace</span>
-          <span className={styles.line2}>en bio,</span>
-          <span className={styles.line3}>convertido.</span>
+          <span className={styles.line1}>{config.hero.line1}</span>
+          <span className={styles.line2}>{config.hero.line2}</span>
+          <span className={styles.line3}>{config.hero.line3}</span>
         </h1>
         {config.heroNote && <p className={styles.heroNote}>{config.heroNote}</p>}
         <div className={styles.bottom}>
-          <p className={styles.subtitle}>
-            Páginas de enlaces a medida, rápidas y sin plantillas genéricas. Diseñadas
-            para convertir seguidores en clientes.
-          </p>
+          <p className={styles.subtitle}>{config.hero.subtitle}</p>
           <div className={styles.actions}>
             <button className={styles.solid} type="button" onClick={handleQuieroClick}>
               Quiero mi página →
