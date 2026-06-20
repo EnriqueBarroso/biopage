@@ -1,0 +1,113 @@
+.queEs {
+  border-bottom: 1px solid var(--border);
+  padding: 5rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.label {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.text {
+  color: var(--muted);
+  font-size: 0.95rem;
+  max-width: 42ch;
+}
+
+.mockupWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.mockup {
+  width: 100%;
+  max-width: 320px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem 1.75rem;
+  text-align: center;
+}
+
+.mockupName {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.mockupTagline {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.mockupButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mockupButtonSolid {
+  background: var(--accent);
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.mockupButtonGhost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .queEs {
+    padding: 3.5rem 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .mockupWrap {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .label {
+    font-size: 0.8125rem;
+  }
+
+  .text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}

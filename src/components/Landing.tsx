@@ -2,6 +2,7 @@ import Particles from './Particles'
 import CustomCursor from './CustomCursor'
 import Navbar from './Navbar'
 import Hero from './Hero'
+import QueEsBiopage from './QueEsBiopage'
 import Ticker from './Ticker'
 import StatsBar from './StatsBar'
 import Problema from './Problema'
@@ -21,6 +22,7 @@ function Landing({ region }: { region: Region }) {
         <Particles />
         <Navbar />
         <Hero />
+        <QueEsBiopage />
         <Ticker />
         <StatsBar />
         <Problema />
