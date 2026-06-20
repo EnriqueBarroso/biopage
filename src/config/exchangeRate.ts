@@ -1,5 +1,5 @@
 export const EXCHANGE_RATE = {
-  usdToCup: 520, // ACTUALIZAR MANUALMENTE según tasa informal del día
+  usdToCup: 693, // ACTUALIZAR MANUALMENTE según tasa informal del día
   lastUpdated: '2026-06-20', // fecha de la última actualización
 }
 
