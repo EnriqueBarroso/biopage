@@ -28,6 +28,13 @@
 .regionNote {
   color: var(--muted);
   font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.exchangeRateNote {
+  color: rgba(255, 255, 255, 0.28);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
   margin-bottom: 2rem;
 }
 

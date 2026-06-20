@@ -1,3 +1,5 @@
+import { convertUsdToCup, formatCup, EXCHANGE_RATE } from './exchangeRate'
+
 export type Region = 'ES' | 'CU'
 
 export interface PlanInfo {
@@ -40,6 +42,7 @@ export interface RegionConfig {
   combo: ComboInfo
   paymentMethods: PaymentMethod[] | null
   priceEquivalenceNote?: string
+  exchangeRateNote?: string
   crossLink?: { text: string; url: string }
 }
 
@@ -150,7 +153,7 @@ export const cubaConfig: RegionConfig = {
       name: 'Creator',
       description: descriptions.Creator,
       price: '240 USD',
-      priceNote: '~72.000 CUP',
+      priceNote: `~${formatCup(convertUsdToCup(240))}`,
       featured: false,
       features: features.Creator,
     },
@@ -159,7 +162,7 @@ export const cubaConfig: RegionConfig = {
       name: 'Business',
       description: descriptions.Business,
       price: '480 USD',
-      priceNote: '~144.000 CUP',
+      priceNote: `~${formatCup(convertUsdToCup(480))}`,
       featured: true,
       features: features.Business,
     },
@@ -168,7 +171,7 @@ export const cubaConfig: RegionConfig = {
       name: 'Portfolio',
       description: descriptions.Portfolio,
       price: '720 USD',
-      priceNote: '~216.000 CUP',
+      priceNote: `~${formatCup(convertUsdToCup(720))}`,
       featured: false,
       features: features.Portfolio,
     },
@@ -177,7 +180,7 @@ export const cubaConfig: RegionConfig = {
       name: 'Mantenimiento',
       description: descriptions.Mantenimiento,
       price: '23 USD',
-      priceNote: '~6.900 CUP/mes',
+      priceNote: `~${formatCup(convertUsdToCup(23))}/mes`,
       featured: false,
       features: features.Mantenimiento,
     },
@@ -185,7 +188,7 @@ export const cubaConfig: RegionConfig = {
   combo: {
     title: 'Biopage Business + Automatización Básica',
     price: '800 USD',
-    note: '~240.000 CUP — ahorro de 120 USD frente a contratarlo por separado',
+    note: `~${formatCup(convertUsdToCup(800))} — ahorro de 120 USD frente a contratarlo por separado`,
   },
   paymentMethods: [
     {
@@ -206,6 +209,7 @@ export const cubaConfig: RegionConfig = {
   ],
   priceEquivalenceNote:
     'Equivalencia orientativa. Precio base en USD. La tasa CUP puede variar.',
+  exchangeRateNote: `Tasa informal aproximada: actualizada el ${EXCHANGE_RATE.lastUpdated}`,
   crossLink: { text: '¿Estás en España? → biopage.es', url: '/' },
 }
 

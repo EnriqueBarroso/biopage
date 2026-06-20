@@ -5,7 +5,7 @@ import styles from './Planes.module.css'
 function Planes() {
   const [activeIndex, setActiveIndex] = useState(1)
   const { config } = useRegion()
-  const { contactUrl, plans, combo, paymentMethods, priceEquivalenceNote } = config
+  const { contactUrl, plans, combo, paymentMethods, priceEquivalenceNote, exchangeRateNote } = config
 
   return (
     <section id="planes" className={styles.planes}>
@@ -16,6 +16,7 @@ function Planes() {
         </div>
 
         {priceEquivalenceNote && <p className={styles.regionNote}>{priceEquivalenceNote}</p>}
+        {exchangeRateNote && <p className={styles.exchangeRateNote}>{exchangeRateNote}</p>}
 
         <div className={styles.accordion}>
           {plans.map((plan, index) => {
