@@ -25,7 +25,7 @@ function Landing({ region }: { region: Region }) {
         <QueEsBiopage />
         <Ticker />
         <StatsBar />
-        <Problema />
+        {region === 'ES' && <Problema />}
         <Planes />
         <Portfolio />
         <FAQ />

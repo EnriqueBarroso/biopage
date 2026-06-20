@@ -24,14 +24,21 @@ function QueEsBiopage() {
           </p>
         </div>
         <FadeIn className={styles.mockupWrap}>
-          <div className={styles.mockup}>
-            <div className={styles.mockupName}>Paladar El Buen Sabor</div>
-            <div className={styles.mockupTagline}>Comida criolla en La Habana</div>
-            <div className={styles.mockupButtons}>
-              <span className={styles.mockupButtonSolid}>Ver menú</span>
-              <span className={styles.mockupButtonGhost}>Reservar mesa</span>
-              <span className={styles.mockupButtonGhost}>WhatsApp</span>
+          <div className={styles.mockupCardWrap}>
+            <span className={styles.exampleBadge}>
+              <span className={styles.exampleDot} />
+              Ejemplo
+            </span>
+            <div className={styles.mockup}>
+              <div className={styles.mockupName}>Paladar El Buen Sabor</div>
+              <div className={styles.mockupTagline}>Comida criolla en La Habana</div>
+              <div className={styles.mockupButtons}>
+                <span className={styles.mockupButtonSolid}>Ver menú</span>
+                <span className={styles.mockupButtonGhost}>Reservar mesa</span>
+                <span className={styles.mockupButtonGhost}>WhatsApp</span>
+              </div>
             </div>
+            <p className={styles.mockupCaption}>Así se vería tu página</p>
           </div>
         </FadeIn>
       </div>

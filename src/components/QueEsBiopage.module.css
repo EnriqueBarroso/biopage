@@ -38,14 +38,53 @@
   justify-content: center;
 }
 
-.mockup {
+.mockupCardWrap {
+  position: relative;
   width: 100%;
   max-width: 320px;
+}
+
+.exampleBadge {
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(232, 93, 48, 0.15);
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 93, 48, 0.3);
+}
+
+.exampleDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.mockup {
+  width: 100%;
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(232, 93, 48, 0.3);
   border-radius: 20px;
   padding: 2rem 1.75rem;
   text-align: center;
+}
+
+.mockupCaption {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.78rem;
 }
 
 .mockupName {
@@ -74,6 +113,7 @@
   padding: 0.7rem 1.5rem;
   font-size: 0.9rem;
   font-weight: 500;
+  cursor: default;
 }
 
 .mockupButtonGhost {
@@ -84,6 +124,7 @@
   padding: 0.7rem 1.5rem;
   font-size: 0.9rem;
   font-weight: 500;
+  cursor: default;
 }
 
 @media (max-width: 900px) {
@@ -94,10 +135,6 @@
   .grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
-  }
-
-  .mockupWrap {
-    order: -1;
   }
 }
 
