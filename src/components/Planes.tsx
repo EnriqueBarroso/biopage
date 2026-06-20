@@ -28,46 +28,61 @@ function Planes() {
                 onMouseEnter={() => setActiveIndex(index)}
                 onClick={() => setActiveIndex(index)}
               >
-                {isActive && plan.featured && (
-                  <span className={styles.badge}>Más popular</span>
+                {plan.featured && (
+                  <span className={`${styles.badge} ${isActive ? styles.badgeVisible : ''}`}>
+                    Más popular
+                  </span>
                 )}
-                {isActive ? (
-                  <div className={styles.expandedContent}>
-                    <div className={styles.number}>{plan.number}</div>
-                    <h3 className={styles.name}>{plan.name}</h3>
-                    <p className={styles.description}>{plan.description}</p>
-                    <div className={styles.price}>{plan.price}</div>
-                    <div className={styles.priceNote}>{plan.priceNote}</div>
-                    <hr className={styles.hr} />
-                    <ul className={styles.features}>
-                      {plan.features.map((feature) => (
-                        <li key={feature}>
-                          <span>—</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <a
-                      className={styles.cta}
-                      href={contactUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Quiero el plan {plan.name}
-                    </a>
+
+                {/* Collapsed layer — always in DOM, fades out when active */}
+                <div className={styles.collapsedContent}>
+                  <div className={styles.collapsedLabel}>
+                    <span className={styles.collapsedNumber}>{plan.number}</span>
+                    <span className={styles.collapsedName}>{plan.name}</span>
+                    <span className={styles.collapsedPrice}>{plan.price}</span>
+                    <span className={styles.collapsedArrow} aria-hidden="true">→</span>
+                    {/* Touch devices */}
+                    <span className={`${styles.collapsedHint} ${styles.hintTouch}`}>
+                      Toca para ver
+                    </span>
+                    {/* Pointer devices */}
+                    <span className={`${styles.collapsedHint} ${styles.hintPointer}`}>
+                      Pasa el cursor
+                    </span>
                   </div>
-                ) : (
-                  <div className={styles.collapsedContent}>
-                    <div className={styles.collapsedLabel}>
-                      <span className={styles.collapsedNumber}>{plan.number}</span>
-                      <span className={styles.collapsedName}>{plan.name}</span>
-                    </div>
-                  </div>
-                )}
+                </div>
+
+                {/* Expanded layer — always in DOM, fades in when active */}
+                <div className={styles.expandedContent}>
+                  <div className={styles.number}>{plan.number}</div>
+                  <h3 className={styles.name}>{plan.name}</h3>
+                  <p className={styles.description}>{plan.description}</p>
+                  <div className={styles.price}>{plan.price}</div>
+                  <div className={styles.priceNote}>{plan.priceNote}</div>
+                  <hr className={styles.hr} />
+                  <ul className={styles.features}>
+                    {plan.features.map((feature) => (
+                      <li key={feature}>
+                        <span>—</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    className={styles.cta}
+                    href={contactUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Quiero el plan {plan.name}
+                  </a>
+                </div>
               </div>
             )
           })}
         </div>
+
         <div className={styles.combo}>
           <span className={styles.comboBadge}>Paquete combinado destacado</span>
           <h3 className={styles.comboTitle}>{combo.title}</h3>
