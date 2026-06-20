@@ -12,6 +12,8 @@ export interface PlanInfo {
   features: string[]
   example?: string
   telegramStart?: string
+  forWhom?: string
+  highlightFeature?: string
 }
 
 export interface ComboInfo {
@@ -77,6 +79,23 @@ const features = {
   ],
   Mantenimiento: ['Actualizaciones continuas', 'Soporte técnico', 'Backups periódicos'],
 }
+
+const cubaFeatures = {
+  Creator: [
+    'Diseño a medida con tu identidad',
+    'Listado de enlaces y servicios',
+    'Botón directo de contacto (WhatsApp/Telegram)',
+    'Carga rápida optimizada para datos móviles',
+  ],
+  Business: [
+    'Todo lo del Plan Creator',
+    'Catálogo de productos con fotos y precios',
+    'Captación de contactos/pedidos',
+    'Botón de pedido directo por mensaje',
+  ],
+}
+
+const cubaHostingHighlight = 'Dominio y hosting incluidos el primer año — sin coste extra'
 
 export const esConfig: RegionConfig = {
   contactUrl: 'https://enrique-barroso-dev.vercel.app',
@@ -153,41 +172,33 @@ export const cubaConfig: RegionConfig = {
     {
       number: '01',
       name: 'Creator',
-      description: descriptions.Creator,
+      description: '¿Dónde te encuentro?',
+      forWhom: 'Negocios que necesitan presencia profesional',
       price: '240 USD',
       priceNote: `~${formatCup(convertUsdToCup(240))}`,
       featured: false,
-      features: features.Creator,
+      features: cubaFeatures.Creator,
+      highlightFeature: cubaHostingHighlight,
       example:
-        'Ejemplo: tu peluquería con fotos, servicios, precios y WhatsApp en un solo lugar.',
+        'Ejemplo: Tu peluquería con fotos, servicios, precios y WhatsApp en un solo lugar.',
       telegramStart: 'creator',
     },
     {
       number: '02',
       name: 'Business',
-      description: descriptions.Business,
+      description: '¿Qué vendes y cómo te compro?',
+      forWhom: 'Negocios con productos o catálogo para mostrar',
       price: '480 USD',
       priceNote: `~${formatCup(convertUsdToCup(480))}`,
       featured: true,
-      features: features.Business,
+      features: cubaFeatures.Business,
+      highlightFeature: cubaHostingHighlight,
       example:
-        'Ejemplo: tu tienda con catálogo de productos y pedidos por mensaje directo.',
+        'Ejemplo: Tu tienda con catálogo de productos y pedidos por mensaje directo.',
       telegramStart: 'business',
     },
     {
       number: '03',
-      name: 'Portfolio',
-      description: descriptions.Portfolio,
-      price: '720 USD',
-      priceNote: `~${formatCup(convertUsdToCup(720))}`,
-      featured: false,
-      features: features.Portfolio,
-      example:
-        'Ejemplo: tu negocio con historia, proyectos anteriores y formulario de contacto.',
-      telegramStart: 'portfolio',
-    },
-    {
-      number: '04',
       name: 'Mantenimiento',
       description: descriptions.Mantenimiento,
       price: '23 USD',

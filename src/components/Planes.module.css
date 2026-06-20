@@ -46,9 +46,10 @@
   gap: 4px;
 }
 
-/* Cuba cards carry an extra "example" line, so they need more room */
+/* Cuba cards carry extra "para quién" / example / highlighted-feature
+   lines, so they need more room */
 .accordionWithExamples {
-  height: 700px;
+  height: 760px;
 }
 
 /* ── Plan card ── */
@@ -234,6 +235,18 @@
   max-width: 32ch;
 }
 
+.forWhom {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+  max-width: 32ch;
+}
+
+.forWhom strong {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
 .price {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
@@ -267,6 +280,30 @@
   font-size: 0.9rem;
   display: flex;
   gap: 0.6rem;
+}
+
+.features li.highlightFeature {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* The active card's background is already accent-orange, so orange text
+   would disappear — switch to white and lean on the check badge instead */
+.planActive .features li.highlightFeature {
+  color: #ffffff;
+}
+
+.features li.highlightFeature .highlightCheck {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--accent);
+  font-size: 0.65rem;
+  flex-shrink: 0;
 }
 
 .features li span {

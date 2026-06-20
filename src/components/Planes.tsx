@@ -61,6 +61,11 @@ function Planes() {
                   <div className={styles.number}>{plan.number}</div>
                   <h3 className={styles.name}>{plan.name}</h3>
                   <p className={styles.description}>{plan.description}</p>
+                  {plan.forWhom && (
+                    <p className={styles.forWhom}>
+                      <strong>Para quién:</strong> {plan.forWhom}
+                    </p>
+                  )}
                   <div className={styles.price}>{plan.price}</div>
                   <div className={styles.priceNote}>{plan.priceNote}</div>
                   <hr className={styles.hr} />
@@ -71,6 +76,12 @@ function Planes() {
                         {feature}
                       </li>
                     ))}
+                    {plan.highlightFeature && (
+                      <li className={styles.highlightFeature}>
+                        <span className={styles.highlightCheck}>✓</span>
+                        {plan.highlightFeature}
+                      </li>
+                    )}
                   </ul>
                   {plan.example && <p className={styles.example}>{plan.example}</p>}
                   <button
