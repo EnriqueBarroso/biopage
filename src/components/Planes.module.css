@@ -497,11 +497,9 @@
 
   .planActive .expandedContent {
     transform: none;
-  }
-
-  /* Cuba cards carry an extra "example" line — let content drive the card
-     height instead of being clipped by inset:0 */
-  .accordionWithExamples .planActive .expandedContent {
+    /* Let content drive the card height instead of being clipped by
+       inset:0 — plans with many features (e.g. Business) need more than
+       the 420px floor below */
     position: static;
   }
 
