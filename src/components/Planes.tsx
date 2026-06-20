@@ -73,15 +73,19 @@ function Planes() {
                     ))}
                   </ul>
                   {plan.example && <p className={styles.example}>{plan.example}</p>}
-                  <a
+                  <button
                     className={styles.cta}
-                    href={contactUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      const url = plan.telegramStart
+                        ? `${contactUrl}?start=${plan.telegramStart}`
+                        : contactUrl
+                      window.open(url, '_blank')
+                    }}
                   >
                     Quiero el plan {plan.name}
-                  </a>
+                  </button>
                 </div>
               </div>
             )

@@ -11,6 +11,7 @@ export interface PlanInfo {
   featured: boolean
   features: string[]
   example?: string
+  telegramStart?: string
 }
 
 export interface ComboInfo {
@@ -159,6 +160,7 @@ export const cubaConfig: RegionConfig = {
       features: features.Creator,
       example:
         'Ejemplo: tu peluquería con fotos, servicios, precios y WhatsApp en un solo lugar.',
+      telegramStart: 'creator',
     },
     {
       number: '02',
@@ -170,6 +172,7 @@ export const cubaConfig: RegionConfig = {
       features: features.Business,
       example:
         'Ejemplo: tu tienda con catálogo de productos y pedidos por mensaje directo.',
+      telegramStart: 'business',
     },
     {
       number: '03',
@@ -181,6 +184,7 @@ export const cubaConfig: RegionConfig = {
       features: features.Portfolio,
       example:
         'Ejemplo: tu negocio con historia, proyectos anteriores y formulario de contacto.',
+      telegramStart: 'portfolio',
     },
     {
       number: '04',
