@@ -1,5 +1,9 @@
+import { Link } from 'react-router-dom'
 import FadeIn from './FadeIn'
 import styles from './Portfolio.module.css'
+import lachopinImg from '../assets/portfolio/lachopin.jpg'
+import cinecubaImg from '../assets/portfolio/cinecuba.jpg'
+import demoBiopageImg from '../assets/portfolio/demo-biopage.jpg'
 
 const projects = [
   {
@@ -8,17 +12,8 @@ const projects = [
     description:
       'Plataforma de e-commerce a medida con catálogo, carrito y checkout optimizados para conversión.',
     url: 'https://lachopin.com',
-    bgClass: styles.bgChopin,
-    // background-image: url('/assets/portfolio/lachopin.jpg')
-  },
-  {
-    name: '¡Hola, Camarada!',
-    tag: 'Hub de contenido · IA',
-    description:
-      'Hub de contenido potenciado con IA para curar, organizar y publicar artículos de forma automática.',
-    url: 'https://holacamarada.com',
-    bgClass: styles.bgCamarada,
-    // background-image: url('/assets/portfolio/holacamarada.jpg')
+    image: lachopinImg,
+    bgPosition: 'center top',
   },
   {
     name: 'CineCuba',
@@ -26,10 +21,19 @@ const projects = [
     description:
       'Plataforma de cine cubano con catálogo de películas, fichas técnicas y sistema de búsqueda avanzada.',
     url: 'https://cine-cubano.com',
-    bgClass: styles.bgCineCuba,
-    // background-image: url('/assets/portfolio/cinecuba.jpg')
+    image: cinecubaImg,
+    bgPosition: 'center top',
   },
 ]
+
+const demoProject = {
+  name: 'Paladar El Buen Sabor',
+  tag: 'Demo en vivo · Biopage',
+  description: 'Así se ve una Biopage real terminada. Navega la página completa como la vería tu cliente.',
+  to: '/demo',
+  image: demoBiopageImg,
+  bgPosition: 'center',
+}
 
 function Portfolio() {
   return (
@@ -47,48 +51,66 @@ function Portfolio() {
           {projects.map((project, index) => (
             <FadeIn delay={index * 150} key={project.name}>
               <div className={styles.card}>
-                {/* Clip container */}
-                <div className={styles.imageWrap}>
-                  {/* Zoomable background layer */}
-                  <div className={`${styles.imageBg} ${project.bgClass}`}>
-                    {/* Poster texture */}
-                    <div className={styles.posterText} aria-hidden="true">
-                      <span>{project.name}</span>
-                      <span>{project.name}</span>
-                    </div>
-                  </div>
-
-                  {/* Dark overlay (always present, darkens on hover via CSS) */}
-                  <div className={styles.overlay} />
-
-                  {/* Badge: top-right */}
+                {/* Image zone: image only, no text on top */}
+                <div className={styles.imageZone}>
+                  <div
+                    className={styles.imageBg}
+                    style={{
+                      backgroundImage: `url(${project.image})`,
+                      backgroundPosition: project.bgPosition,
+                    }}
+                  />
                   <div className={styles.badge}>
                     <span className={styles.badgeDot} />
                     EN PRODUCCIÓN
                   </div>
+                </div>
 
-                  {/* Default info: project name + tag at bottom */}
-                  <div className={styles.cardInfo}>
-                    <div className={styles.tag}>{project.tag}</div>
-                    <h3 className={styles.name}>{project.name}</h3>
-                  </div>
-
-                  {/* Hover content: description + CTA */}
-                  <div className={styles.hoverContent}>
-                    <p className={styles.description}>{project.description}</p>
-                    <a
-                      className={styles.ctaBtn}
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Ver proyecto →
-                    </a>
-                  </div>
+                {/* Info zone: solid background, always visible */}
+                <div className={styles.infoZone}>
+                  <div className={styles.tag}>{project.tag}</div>
+                  <h3 className={styles.name}>{project.name}</h3>
+                  <p className={styles.description}>{project.description}</p>
+                  <a
+                    className={styles.ctaBtn}
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ver proyecto →
+                  </a>
                 </div>
               </div>
             </FadeIn>
           ))}
+          <FadeIn delay={projects.length * 150}>
+            <div className={styles.card}>
+              {/* Image zone: image only, no text on top */}
+              <div className={styles.imageZone}>
+                <div
+                  className={styles.imageBg}
+                  style={{
+                    backgroundImage: `url(${demoProject.image})`,
+                    backgroundPosition: demoProject.bgPosition,
+                  }}
+                />
+                <div className={styles.badge}>
+                  <span className={styles.badgeDot} />
+                  VER DEMO →
+                </div>
+              </div>
+
+              {/* Info zone: solid background, always visible */}
+              <div className={styles.infoZone}>
+                <div className={styles.tag}>{demoProject.tag}</div>
+                <h3 className={styles.name}>{demoProject.name}</h3>
+                <p className={styles.description}>{demoProject.description}</p>
+                <Link className={styles.ctaBtn} to={demoProject.to}>
+                  Ver demo →
+                </Link>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </div>
     </section>

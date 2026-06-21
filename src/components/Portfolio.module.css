@@ -34,86 +34,33 @@
   gap: 1.5rem;
 }
 
-/* ── Card shell ── */
+/* ── Card shell: two stacked zones, one visual unit ── */
 .card {
+  display: flex;
+  flex-direction: column;
   border-radius: 10px;
   overflow: hidden;
 }
 
-/* ── Clip container: aspect ratio + overflow ── */
-.imageWrap {
+/* ── Image zone: top ~58% of the card, no text on top ── */
+.imageZone {
   position: relative;
   aspect-ratio: 4 / 3;
+  flex: 0 0 auto;
   overflow: hidden;
-  border-radius: 10px;
-  border-top: 3px solid transparent;
-  transition: border-color 0.35s ease;
-}
-
-.imageWrap:hover {
-  border-top-color: var(--accent);
 }
 
 /* ── Zoomable background layer ── */
 .imageBg {
   position: absolute;
   inset: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
   transition: transform 0.45s ease;
 }
 
-.imageWrap:hover .imageBg {
-  transform: scale(1.06);
-}
-
-/* ── Gradient colors per project ── */
-.bgChopin {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d1810 100%);
-}
-
-.bgCamarada {
-  background: linear-gradient(135deg, #1a1a1a 0%, #1a2d18 100%);
-}
-
-.bgCineCuba {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d1825 100%);
-}
-
-/* ── Poster texture text (decorative) ── */
-.posterText {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.posterText span {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  color: #ffffff;
-  opacity: 0.08;
-  white-space: nowrap;
-  transform: rotate(-8deg);
-  letter-spacing: -0.02em;
-  user-select: none;
-}
-
-/* ── Dark overlay ── */
-.overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 55%);
-  transition: background 0.4s ease;
-}
-
-.imageWrap:hover .overlay {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.4) 100%);
+.card:hover .imageBg {
+  transform: scale(1.05);
 }
 
 /* ── Badge: EN PRODUCCIÓN ── */
@@ -125,7 +72,7 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(10, 20, 10, 0.95);
   border: 1px solid rgba(34, 197, 94, 0.45);
   border-radius: 999px;
   padding: 0.3rem 0.7rem;
@@ -134,7 +81,23 @@
   letter-spacing: 0.12em;
   color: #4ade80;
   text-transform: uppercase;
-  backdrop-filter: blur(6px);
+}
+
+/* ── Info zone: bottom, solid background, always visible ── */
+.infoZone {
+  flex: 1;
+  background: #0a0a0a;
+  border-top: 3px solid transparent;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover .infoZone {
+  background: #0e0e0e;
+  border-top-color: var(--accent);
 }
 
 .badgeDot {
@@ -151,28 +114,11 @@
   50%       { opacity: 0.35; transform: scale(0.7); }
 }
 
-/* ── Default bottom info ── */
-.cardInfo {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  padding: 1.25rem 1.5rem 1.5rem;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.imageWrap:hover .cardInfo {
-  transform: translateY(-8px);
-  opacity: 0;
-}
-
 .tag {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.65rem;
   color: rgba(255, 255, 255, 0.55);
-  margin-bottom: 0.35rem;
 }
 
 .name {
@@ -181,27 +127,6 @@
   font-size: 1.5rem;
   color: #ffffff;
   line-height: 1.15;
-}
-
-/* ── Hover content: slides up ── */
-.hoverContent {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-  transform: translateY(18px);
-  opacity: 0;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.imageWrap:hover .hoverContent {
-  transform: translateY(0);
-  opacity: 1;
 }
 
 .description {
@@ -255,18 +180,8 @@
     line-height: 1.7;
   }
 
-  /* Always show description on mobile */
-  .cardInfo {
-    display: none;
-  }
-
-  .hoverContent {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .overlay {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.25) 100%);
+  .infoZone {
+    padding: 1.25rem 1.5rem;
   }
 
   .description {

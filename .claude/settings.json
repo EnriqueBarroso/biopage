@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node verify-cta.cjs)",
+      "Bash(rm -f verify-cta.cjs)",
+      "Bash(taskkill //F //IM node.exe //T)",
+      "Bash(nohup npm run dev -- --port 5186)",
+      "Bash(timeout 20 bash -c 'until curl -sf http://localhost:5186 >/dev/null; do sleep 1; done')",
+      "Bash(node verify-changes.cjs)",
+      "Bash(rm -f verify-*.cjs v-*.png)",
+      "Bash(git status *)",
+      "Bash(nohup npm run dev -- --port 5187)",
+      "Bash(timeout 20 bash -c 'until curl -sf http://localhost:5187 >/dev/null; do sleep 1; done')",
+      "Bash(node verify-planes.cjs)",
+      "Read(//c/ENRIQUE/PROYECTOス/para vender/biopage/src/components/**)",
+      "Bash(node debug-business2.cjs)",
+      "Bash(rm -f verify-*.cjs debug-*.cjs p-*.png)",
+      "PowerShell(npm run build)",
+      "PowerShell(vercel --prod)",
+      "PowerShell(vercel --prod --yes)",
+      "PowerShell(vercel domains ls 2>&1)",
+      "PowerShell(vercel project ls 2>&1)",
+      "Bash(vercel --prod)",
+      "Bash(vercel --prod --yes)",
+      "Bash(vercel link *)"
+    ]
+  }
+}

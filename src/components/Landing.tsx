@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import Particles from './Particles'
 import CustomCursor from './CustomCursor'
 import Navbar from './Navbar'
@@ -15,6 +17,14 @@ import { RegionProvider } from '../context/RegionContext'
 import type { Region } from '../config/regions'
 
 function Landing({ region }: { region: Region }) {
+  const { hash } = useLocation()
+
+  useEffect(() => {
+    if (!hash) return
+    const target = document.getElementById(hash.slice(1))
+    target?.scrollIntoView({ behavior: 'smooth' })
+  }, [hash])
+
   return (
     <RegionProvider region={region}>
       <div>
